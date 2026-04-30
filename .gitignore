@@ -1,0 +1,20 @@
+# Security
+secrets.json
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+
+# Data & Models
+data/*.csv
+features/
+models/*.pkl
+!models/xgb_ict_model.pkl
+
+# IDEs
+.vscode/
+.idea/
