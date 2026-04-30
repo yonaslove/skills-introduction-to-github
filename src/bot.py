@@ -91,6 +91,7 @@ if not mt5.initialize():
 script_dir = os.path.dirname(os.path.abspath(__file__))
 model = joblib.load(os.path.join(script_dir, "..", "models", "xgb_ict_model.pkl"))
 print("✅ AI Master System Online")
+send_telegram_msg("🤖 <b>Gold AI Sniper Online!</b>\nTrading Bot is active and monitoring XAUUSD.")
 
 try:
     while True:
@@ -138,8 +139,8 @@ try:
                     send_order(SYMBOL_GOLD, mt5.ORDER_TYPE_BUY, price, sl, tp, lots, "MASTER-SNIPER")
                     
                     msg = f"🔔 <b>ELITE BUY SIGNAL</b>\n"
-                    msg += f"<b>Symbol:</b> {SYMBOL_GOLD}\n"
-                    msg += f"<b>AI Confidence:</b> {confidence:.2%}\n\n"
+                    msg += f"Symbol: {SYMBOL_GOLD} (Gold)\n"
+                    msg += f"AI Confidence: {confidence:.2%}\n\n"
                     msg += f"📊 <b>Institutional Context:</b>\n"
                     msg += f"• ERL Sweep: {sweep_text}\n"
                     msg += f"• Session: {'London' if latest_row['London_Killzone'].values[0] else 'New York'}\n"
@@ -158,8 +159,8 @@ try:
                     send_order(SYMBOL_GOLD, mt5.ORDER_TYPE_SELL, price, sl, tp, lots, "MASTER-SNIPER")
                     
                     msg = f"🔔 <b>ELITE SELL SIGNAL</b>\n"
-                    msg += f"<b>Symbol:</b> {SYMBOL_GOLD}\n"
-                    msg += f"<b>AI Confidence:</b> {confidence:.2%}\n\n"
+                    msg += f"Symbol: {SYMBOL_GOLD} (Gold)\n"
+                    msg += f"AI Confidence: {confidence:.2%}\n\n"
                     msg += f"📊 <b>Institutional Context:</b>\n"
                     msg += f"• ERL Sweep: {sweep_text}\n"
                     msg += f"• Session: {'London' if latest_row['London_Killzone'].values[0] else 'New York'}\n"

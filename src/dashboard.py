@@ -112,9 +112,9 @@ if df is not None and model is not None:
     # Highlight FVGs and OBs
     for i, row in chart_df.iterrows():
         if row['Bullish_OB']:
-            fig.add_annotation(x=i, y=row['Low'], text="OB", showarrow=True, arrowhead=1, color="green", row=1, col=1)
+            fig.add_annotation(x=i, y=row['Low'], text="OB", showarrow=True, arrowhead=1, font=dict(color="green"), row=1, col=1)
         if row['Bearish_OB']:
-            fig.add_annotation(x=i, y=row['High'], text="OB", showarrow=True, arrowhead=1, color="red", row=1, col=1)
+            fig.add_annotation(x=i, y=row['High'], text="OB", showarrow=True, arrowhead=1, font=dict(color="red"), row=1, col=1)
             
     fig.update_layout(template='plotly_dark', height=800, showlegend=False)
     st.plotly_chart(fig, use_container_width=True)
